@@ -1,0 +1,13 @@
+.item{
+    display: flex;
+    align-items: center;
+    gap: 0.3rem;
+    
+}
+.item > span{
+    cursor: pointer;
+}
+.disc{
+    display: flex;
+    gap: 0.2rem;
+}

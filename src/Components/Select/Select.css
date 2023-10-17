@@ -1,0 +1,21 @@
+.select{
+    display: flex;
+    width: 100%;
+    border-radius: 8px;
+    overflow: hidden;
+}
+select{
+    outline: none;
+    border: none;
+    width: 100%;
+    padding: 0.7rem 0.5rem;
+}
+button{
+    width: fit-content;
+    padding: 0.7rem;
+    outline: none;
+    border: none;
+    border-radius: 8px;
+    background-color: aqua;
+    cursor: pointer;
+}
