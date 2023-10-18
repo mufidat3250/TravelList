@@ -1,0 +1,14 @@
+.items-wrapper{
+    height: 65%;
+    background-color: rgba(63, 34, 21, 0.787);
+    /* display: flex; */
+    padding-top: 2rem;
+}
+
+.items{
+    width: 80%;
+    display: flex;
+    gap: 1rem;
+    margin: 0 auto;
+}
+

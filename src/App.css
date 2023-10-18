@@ -20,25 +20,10 @@
     align-items: center;
     gap: 0.5rem;
 }
-.items-wrapper{
-    height: 65%;
-    background-color: rgba(63, 34, 21, 0.787);
-    /* display: flex; */
-    padding-top: 2rem;
-}
-.footer{
-    height: 10%;
-    background-color: gray;
-}
 
-.items{
-    width: 80%;
-    display: flex;
-    gap: 1rem;
-    margin: 0 auto;
-}
 .item{
     display: flex;
     align-items: center;
     gap: 0.5rem;
 }
+

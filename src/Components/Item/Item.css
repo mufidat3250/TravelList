@@ -10,4 +10,5 @@
 .disc{
     display: flex;
     gap: 0.2rem;
+    color: white;
 }

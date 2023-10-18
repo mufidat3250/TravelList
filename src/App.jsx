@@ -1,49 +1,27 @@
 import { useState } from 'react'
 import './App.css'
-import Input from './Components/Inputs'
-import Select from './Components/Select/Index'
-import Item from './Components/Item'
 import NavBar from './Components/NavBar'
+import Form from './Components/Form'
+import Items from './Components/Items'
+import Footer from './Components/Footer'
 
 function App() {
-  const [description, setDescription] = useState('')
-  const [quantity, setQuatity] = useState('')
-  const [packed, setPacked] = useState(false)
   const [items, setItems] = useState([])
-
-  const handleChange = (e) => {
-      setDescription(e.target.value)
+  const handleAddItem = (item) => {
+    setItems((items)=> [...items, item])
   }
-  const handleSubmit = () =>{
-    const newitems = {description, quantity, packed}
-    setItems([...items, newitems])
+  const handleDelete = (id) => {
+    setItems((items)=> items.filter((item)=> item.id !== id))
   }
-
-
-  const listOptions = Array.from({length:20}, (v, i) =>  i + 1)
+  const handleToggle = (id) => {
+    setItems((items)=> items.map((item)=> item.id === id ? {...item, packed:!item.packed}: item))
+  }
   return (
     <div className='App'>
-        <NavBar/>
-      <div className='sub-head'>
-          <p>What do you need for your trip 😢</p>
-          <div style={{width:'fit-content'}}>
-          <Select listOptions ={listOptions} value={quantity} onchange={(e)=> setQuatity(e.target.value)}/>
-          </div>
-          <div className='' style={{width:'20%'}}>
-          <Input placeholder={'items'} onchange={handleChange} value = {description}/>
-            </div>   
-            <button onClick={handleSubmit}> Add</button>  
-      </div>
-      <div className='items-wrapper'>
-       <div className='items'>
-       {items.map((item, index)=> 
-          <Item desc={item.description} key={index} quantity={item.quantity} packed= {item.packed}/>
-        )}
-       </div>
-      </div>
-      <div className='footer'>
-        
-      </div>
+      <NavBar/>
+      <Form  onAddItem={handleAddItem}/>
+      <Items items={items} onDelete = {handleDelete}  onToggle = {handleToggle}/>
+      <Footer items= {items}/>
     </div>
   )
 }
