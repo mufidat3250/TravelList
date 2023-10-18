@@ -2,7 +2,7 @@ import React from 'react'
 import './Item.css'
 import Item from '../Item'
 
-const Items = ({items, onDelete, onToggle}) => {
+const Items = ({items, onDelete, onToggle, onClearList}) => {
   return (
     <div className='items-wrapper'>
        <div className='items'>
@@ -10,6 +10,7 @@ const Items = ({items, onDelete, onToggle}) => {
           <Item item={item} onDelete = {onDelete} key = {index} onToggle={onToggle}/>
         )}
        </div>
+       <button onClick={onClearList}>Clear List</button>
       </div>
   )
 }

@@ -10,10 +10,11 @@ const Form = ({onAddItem}) => {
 
     const handleSubmit = (e) =>{
         e.preventDefault()
-        const newitems = {description, quantity, packed, id: Date.now()}
+        let newitems = {description, quantity, packed, id: Date.now()}
         onAddItem(newitems)
+        
       }
-      const handleChange = (e) => {
+    const handleChange = (e) => {
         setDescription(e.target.value)
     }
   const listOptions = Array.from({length:20}, (v, i) =>  i + 1)
